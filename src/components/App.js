@@ -36,9 +36,15 @@ class App extends Component {
     console.log('Submitting the file...')
     //const result = await ipfs.add(this.state.buffer)
     //console.log(result)
+
     for await (const r of ipfs.addAll(this.state.buffer)) {
       console.log(r)
+      const fileHash = r['path']
+      //console.log(fileHash)
+      this.setState({ fileHash })
+
     }
+
   }
 
 
