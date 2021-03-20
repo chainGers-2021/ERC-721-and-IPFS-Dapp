@@ -1,5 +1,4 @@
  import React, { Component } from 'react';
-import logo from '../logo.png';
 import './App.css';
 
 const ipfsClient = require('ipfs-http-client')
@@ -10,7 +9,8 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      buffer:null
+      buffer: null,
+      fileHash: 'QmUEeRYpH4uUBQCSi5r7emM3L139mr3DqbhQ6pDz5PHMKB'
     };
 
   }
@@ -54,8 +54,8 @@ class App extends Component {
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
               <div className="content mr-auto ml-auto">
-                  <img src={logo} className="App-logo" alt="logo" />
-                <p> &nbsp; </p>
+                  <img src= { `https://ipfs.infura.io/ipfs/${this.state.fileHash}` } />
+                  <p> &nbsp; </p>
                 <h2> Change Picture </h2>
                 <form onSubmit = {this.onSubmit}>
                   <input type = 'file' onChange = {this.captureFile} />
