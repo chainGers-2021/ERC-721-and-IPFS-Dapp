@@ -8,6 +8,6 @@ contract File {
 	}
 
 	function get() public view returns (string memory){
-		return memeHash;
+		return fileHash;
 	}
 }
