@@ -1,6 +1,6 @@
 # ERC-721 NFT on IPFS Dapp
 
-###### This is a Dapp that uploads files on IPFS and mints its corresponding NFT of ERC-721 standard on Blockchain. 
+#### This is a Dapp that uploads files on IPFS and mints its corresponding NFT of ERC-721 standard on Blockchain. 
 
 
 ## Quickstart
