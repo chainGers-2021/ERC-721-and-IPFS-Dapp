@@ -84,8 +84,7 @@ class App extends Component {
   onSubmit = async(event) => {
     event.preventDefault()
     console.log('Submitting the file...')
-    //const result = await ipfs.add(this.state.buffer)
-    //console.log(result)
+    
     //Adding file to IPFS and setting the IPFS hash returned
     var _fileHash
     for await (const r of ipfs.addAll(this.state.buffer)) {
@@ -93,8 +92,8 @@ class App extends Component {
       const fileHash = r['path']
       _fileHash = fileHash
     }
-      //console.log(fileHash)
-      //Calling set method 
+    
+    //Calling set method 
     this.state.contract.methods.awardItem('0x6a2654843d31B18F142855242BE3bf2e44FD518a', _fileHash, "Yippee!").send({from : this.state.account}).then((r) => {  
         this.setState({ fileHash: _fileHash })
     })
