@@ -26,10 +26,10 @@ To start the React client run this command-
 npm run start
 ``` 
 
-### How to Mint your First NFT
+## How to Mint your First NFT?
 After you have succesfully run the above commands, you will be ready to mint your first NFT. Choose any file and click on Submit Query. If the file is visible in the React frontend then you have successfully minted your first NFT!
 
-##How does it work?
+## How does it work?
 When you upload your image to the application, the file gets uploaded to the IPFS via `ipfsClient` using the `ipfs.addAll()` method in `App.js`. You can read more about this [here](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/FILES.md). The IPFS then returns an object containing the path to the file which is also referred to as IPFS hash. You can get your file from IPFS using the same hash. We have used Infura API here, so you will find the file at https://ipfs.infura.io/ipfs/$ (just replace the IPFS path with $ here).
 
 In this Dapp, IPFS hash of NFT is set using the `set()` function that is called during the minting of NFT using `awardItem()` function in `File.sol`. After minting the NFT, the Frontend loads the image of the NFT from the Blockchain using the `get()` function in `File.sol`. You can check if its working correctly by refreshing the page after uploading the file. The image should still be there as it is getting loaded from the Blockchain directly.      
